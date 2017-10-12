@@ -10,8 +10,8 @@ const CardContainer = ({ cardData, toggleFavorite, handleLoadMore } ) => {
       key={index}
       cardData={cardDataObj}
       toggleFavorite={toggleFavorite}
-    />
-  })
+    />;
+  });
 
   return (
     <div className='cardContainer'>
