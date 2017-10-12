@@ -10,17 +10,35 @@ class App extends Component {
   constructor() {
     super();
     this.state= {
-      appArray: []
+      appArray: [],
+      favCount: 0
     };
     this.getDataForRoute = this.getDataForRoute.bind(this);
     this.toggleFavorite = this.toggleFavorite.bind(this);
+    this.getFavs = this.getFavs.bind(this);
+  }
+
+  increaseFavorite() {
+    console.log('Increase!')
+    const prevFavCount = this.state.favCount * 1;
+    console.log(prevFavCount)
+    const newFavCount = prevFavCount + 1;
+    this.setState({favCount: newFavCount});
+  }
+
+  decreaseFavorite() {
+    console.log('Decrease!')
+    const prevFavCount = this.state.favCount * 1;
+    const newFavCount = prevFavCount - 1;
+    this.setState({ favCount: newFavCount });
   }
 
   toggleFavorite(id) {
     const oldState = [...this.state.appArray];
     const newState = oldState.map(item => {
       if (item.id === id) {
-        console.log('match!')
+        console.log('fav?: ', item.isFavorite)
+        item.isFavorite ? this.decreaseFavorite() : this.increaseFavorite();
         item.isFavorite = !item.isFavorite
       }
       return item
@@ -56,27 +74,28 @@ class App extends Component {
     });
   }
 
+  getFavs() {
+    const Favorites = [...this.state.appArray].filter(item=> item.isFavorite )
+    return Favorites;
+  }
+
   render() {
     return (
       
         
       <div className="App">
-        <Header />
+        <Header favCount={this.state.favCount}/>
 
         <Route exact path="/"
           render={() =>
             <Welcome scroll='' />
           }
         />
-        {
-          this.state.appArray[0] &&
         <Route exact path="/people"
           render={() =>
             <CardContainer cardData={this.getDataForRoute('people')} toggleFavorite={this.toggleFavorite}/>
           }
         />
-        }
-        
         <Route exact path="/planets"
           render={() =>
             <CardContainer cardData={this.getDataForRoute('planets')} toggleFavorite={this.toggleFavorite}/>
@@ -87,7 +106,11 @@ class App extends Component {
             <CardContainer cardData={this.getDataForRoute('vehicles')} toggleFavorite={this.toggleFavorite}/>
           }
         />
-        
+        <Route exact path="/favorites"
+          render={() =>
+            <CardContainer cardData={this.getFavs()} toggleFavorite={this.toggleFavorite} />
+          }
+        />
       </div>
       
       
