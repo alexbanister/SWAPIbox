@@ -2,6 +2,7 @@
 
 .button {
   @include radial-gradient($light-grey, $dark-grey);
+  height: 20px;
   padding: 1em 3em;
   margin: 1em;
   border: 1px solid $highlight-dark;
