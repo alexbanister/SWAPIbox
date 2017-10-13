@@ -19,10 +19,18 @@ const mockPeople = {
       "eye_color": "blue",
       "birth_year": "19BBY",
       "gender": "male",
-      "homeworld": "https://enzymeSucks.com/mockData/api/planets/1/",
-      "species": ["https://enzymeSucks.com/mockData/api/species/1/"]
+      "homeworld": "https://swapi.co/api/planets/1/",
+      "species": ["https://swapi.co/api/species/1/"],
+      "type": "people"
     }
   ]
+};
+
+const cleanedMockPeople = {
+  name: "Luke Skywalker",
+  Homeworld: "https://swapi.co/api/planets/1/",
+  species: ["https://swapi.co/api/species/1/"],
+  type: "people"
 };
 
 const mockPlanets = {
@@ -38,6 +46,18 @@ const mockPlanets = {
     }
   ]
 };
+
+const cleanedMockPlanets = [
+  {
+    "name": 'Alderaan',
+    "terrain": 'grasslands, mountains',
+    "population": '2000000000',
+    "climate": 'temperate',
+    "residents": ['https://enzymeSucks.com/mockData/api/people/5/'],
+    "isFavorite": false,
+    "type": 'planets'
+  }
+];
 
 const mockVehicles = {
   "results": [
@@ -56,6 +76,17 @@ const mockVehicles = {
     }
   ]
 };
+
+const cleanedVehicleData = [
+  {
+    "Model": "Digger Crawler",
+    "Passengers": "30",
+    "Vehicle Class": "wheeled",
+    "isFavorite": false,
+    "name": "Sand Crawler",
+    "type": "vehicles"
+  }
+];
 
 const mockSpecies = {
   "name": "Human"
@@ -87,5 +118,8 @@ module.exports = {
   mockPlanet,
   mockVehicles,
   mockSpecies,
-  mockCardDataObj
+  mockCardDataObj,
+  cleanedVehicleData,
+  cleanedMockPeople,
+  cleanedMockPlanets
 };
