@@ -13,6 +13,7 @@ import {
 
 
 describe('User intergration test', () => {
+
   beforeEach(() => {
     fetchMock.get('https://swapi.co/api/films/1', {
       status: 200,
@@ -141,3 +142,4 @@ describe('User intergration test', () => {
   });
 
 });
+

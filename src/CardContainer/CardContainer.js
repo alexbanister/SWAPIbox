@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card/Card';
-import Button from '../Button/Button';
 
 
 const CardContainer = ({ cardData, toggleFavorite, handleLoadMore } ) => {
@@ -16,11 +15,9 @@ const CardContainer = ({ cardData, toggleFavorite, handleLoadMore } ) => {
   return (
     <div className='cardContainer'>
       {allCards}
-      <div className='load-more'>
-        <Button label='Load More' onClick={ handleLoadMore } />
-      </div>
     </div>
   );
+  
 };
 
 CardContainer.propTypes = {

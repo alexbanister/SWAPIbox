@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import CardContainer from '../CardContainer/CardContainer';
+import Button from '../Button/Button';
 import Welcome from '../Welcome/Welcome';
 import { Route } from 'react-router';
 import { fetchList, fetchMovieScroll } from '../Helper.js';
@@ -80,17 +81,27 @@ class App extends Component {
   }
 
   getRandomMovie() {
-    const movieIndex = Math.floor(Math.random() * ((7 - 0) + 1)) + 0;
-    return this.state.movieArray[movieIndex];
+    const movieIndex = Math.floor(Math.random() * ((7 - 1) + 1)) + 1;
+    if (this.state.movieArray[movieIndex]){
+      return this.state.movieArray[movieIndex];
+    }
+    console.log('recursed!')
+    return this.getRandomMovie;
   }
 
   render() {
+
     return (
       <div className="App">
         <Header favCount={this.getFavorites().length}/>
 
         {
-          this.state.movieArray.length &&
+          this.state.movieArray.length < 7 &&
+          <h3>Loading</h3>
+        }
+
+        {
+          this.state.movieArray.length === 7 &&
         <Route exact path="/"
           render={() =>
             <Welcome movie={this.getRandomMovie()} />
@@ -100,34 +111,40 @@ class App extends Component {
 
         <Route exact path="/people"
           render={() =>
-            <CardContainer
-              handleLoadMore={this.handleLoadMore}
-              cardData={this.getDataForRoute('people')}
-              toggleFavorite={this.toggleFavorite}/>
+            <div>
+              <CardContainer
+                cardData={this.getDataForRoute('people')}
+                toggleFavorite={this.toggleFavorite}/>
+              <Button label='Load More' onClick={this.handleLoadMore} />  
+            </div>
           }
         />
 
         <Route exact path="/planets"
           render={() =>
-            <CardContainer
-              handleLoadMore={this.handleLoadMore}
-              cardData={this.getDataForRoute('planets')}
-              toggleFavorite={this.toggleFavorite}/>
+            <div>
+              <CardContainer
+                cardData={this.getDataForRoute('planets')}
+                toggleFavorite={this.toggleFavorite}/>
+              <Button label='Load More' onClick={this.handleLoadMore} /> 
+            </div>
           }
         />
         <Route exact path="/vehicles"
           render={() =>
-            <CardContainer
-              handleLoadMore={this.handleLoadMore}
-              cardData={this.getDataForRoute('vehicles')}
-              toggleFavorite={this.toggleFavorite}/>
+            <div>
+              <CardContainer
+                cardData={this.getDataForRoute('vehicles')}
+                toggleFavorite={this.toggleFavorite}/>
+              <Button label='Load More' onClick={this.handleLoadMore} /> 
+            </div>
           }
         />
         <Route exact path="/favorites"
           render={() =>
             <CardContainer
               cardData={this.getFavorites()} 
-              toggleFavorite={this.toggleFavorite}/>
+              toggleFavorite={this.toggleFavorite}/>  
           }
         />
       </div>

@@ -83,6 +83,7 @@ describe('fetchList', () => {
       body: {
         name: "nick b"
       }
+
     });
     fetchMock.get('https://swapi.co/api/people/81/', {
       status: 200,

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Welcome = ({ movie }) => {
-
   const romanArray = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
 
   return (

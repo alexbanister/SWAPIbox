@@ -76,11 +76,15 @@ const cleanVehiclesData = (arrayOfVehicles) => {
       'Passengers': vehicle.passengers,
       isFavorite: false,
       type: 'vehicles',
-      id: Date.now() + index
+      id: generateId()
     };
     return newVehicle;
   });
   return cleanArray;
+};
+
+const generateId = () => {
+  return '_' + Math.random().toString(36).substr(2, 9);
 };
 
 const cleanPeopleData = (arrayOfPeople) => {
@@ -93,12 +97,15 @@ const cleanPeopleData = (arrayOfPeople) => {
       'Population': 0,
       isFavorite: false,
       type: 'people',
-      id: Date.now() + index
+      id: generateId()
     };
     return newPerson;
   });
   return cleanArray;
 };
+
+
+
 
 const cleanPlanetsData = (arrayOfPlanets) => {
   const rawArray = arrayOfPlanets.results;
@@ -111,7 +118,7 @@ const cleanPlanetsData = (arrayOfPlanets) => {
       'Residents': planet.residents,
       isFavorite: false,
       type: 'planets',
-      id: Date.now() + index
+      id: generateId()
     };
     return newPlanet;
   });

@@ -3,10 +3,9 @@
 .cardContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 100px;
   .load-more {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+
     // column-span: 3;
   }
 }
