@@ -37,7 +37,6 @@ const fetchList = (type) => {
       }
       if (type === 'planets') {
         const allResidents = personPlaceOrThing.Residents.map(residentAPI => {
-          // console.log(personPlaceOrThing.Residents);
           return fetch(residentAPI)
             .then(response => response.json());
         });

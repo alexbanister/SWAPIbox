@@ -42,12 +42,10 @@ describe('User intergration test', () => {
       status: 200,
       body: mockFilms
     });
-    // planets
     fetchMock.get('https://swapi.co/api/planets/', {
       status: 200,
       body: mockPlanets
     });
-    // people
     fetchMock.get('https://swapi.co/api/people/5/', {
       status: 200,
       body: mockPeople
