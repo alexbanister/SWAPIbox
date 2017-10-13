@@ -2,13 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Card from './Card';
 import {
-  mockFilms,
-  mockPeople,
-  mockPlanets,
-  mockVehicles,
-  mockSpecies,
-  mockPerson,
-  mockPlanet,
   mockCardDataObj
 } from '../_mock/mockData';
 

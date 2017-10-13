@@ -34,30 +34,20 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        Array [
-          <Card
-            cardData={
-                        Object {
-                                    "Homeworld": "Tatooine",
-                                    "Population": "200000",
-                                    "Species": "Human",
-                                    "id": 1507831320587,
-                                    "isFavorite": false,
-                                    "name": "Luke Skywalker",
-                                    "type": "people",
-                                  }
-            }
-            toggleFavorite={[Function]}
+        <Card
+          cardData={
+                    Object {
+                              "Homeworld": "Tatooine",
+                              "Population": "200000",
+                              "Species": "Human",
+                              "id": 1507831320587,
+                              "isFavorite": false,
+                              "name": "Luke Skywalker",
+                              "type": "people",
+                            }
+          }
+          toggleFavorite={[Function]}
 />,
-        ],
-        <div
-          className="load-more"
->
-          <Button
-                    label="Load More"
-                    onClick={[Function]}
-          />
-</div>,
       ],
       "className": "cardContainer",
     },
@@ -83,32 +73,6 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
-      Object {
-        "instance": null,
-        "key": null,
-        "nodeType": "host",
-        "props": Object {
-          "children": <Button
-            label="Load More"
-            onClick={[Function]}
-/>,
-          "className": "load-more",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": null,
-          "nodeType": "function",
-          "props": Object {
-            "label": "Load More",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        "type": "div",
-      },
     ],
     "type": "div",
   },
@@ -119,30 +83,20 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          Array [
-            <Card
-              cardData={
-                            Object {
-                                          "Homeworld": "Tatooine",
-                                          "Population": "200000",
-                                          "Species": "Human",
-                                          "id": 1507831320587,
-                                          "isFavorite": false,
-                                          "name": "Luke Skywalker",
-                                          "type": "people",
-                                        }
-              }
-              toggleFavorite={[Function]}
+          <Card
+            cardData={
+                        Object {
+                                    "Homeworld": "Tatooine",
+                                    "Population": "200000",
+                                    "Species": "Human",
+                                    "id": 1507831320587,
+                                    "isFavorite": false,
+                                    "name": "Luke Skywalker",
+                                    "type": "people",
+                                  }
+            }
+            toggleFavorite={[Function]}
 />,
-          ],
-          <div
-            className="load-more"
->
-            <Button
-                        label="Load More"
-                        onClick={[Function]}
-            />
-</div>,
         ],
         "className": "cardContainer",
       },
@@ -167,32 +121,6 @@ ShallowWrapper {
           "ref": null,
           "rendered": null,
           "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": null,
-          "nodeType": "host",
-          "props": Object {
-            "children": <Button
-              label="Load More"
-              onClick={[Function]}
-/>,
-            "className": "load-more",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": null,
-            "nodeType": "function",
-            "props": Object {
-              "label": "Load More",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": "div",
         },
       ],
       "type": "div",
