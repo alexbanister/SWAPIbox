@@ -81,17 +81,27 @@ class App extends Component {
   }
 
   getRandomMovie() {
-    const movieIndex = Math.floor(Math.random() * ((7 - 0) + 1)) + 0;
-    return this.state.movieArray[movieIndex];
+    const movieIndex = Math.floor(Math.random() * ((7 - 1) + 1)) + 1;
+    if (this.state.movieArray[movieIndex]){
+      return this.state.movieArray[movieIndex];
+    }
+    console.log('recursed!')
+    return this.getRandomMovie;
   }
 
   render() {
+
     return (
       <div className="App">
         <Header favCount={this.getFavorites().length}/>
 
         {
-          this.state.movieArray.length &&
+          this.state.movieArray.length < 7 &&
+          <h3>Loading</h3>
+        }
+
+        {
+          this.state.movieArray.length === 7 &&
         <Route exact path="/"
           render={() =>
             <Welcome movie={this.getRandomMovie()} />
