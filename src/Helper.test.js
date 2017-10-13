@@ -70,8 +70,8 @@ describe('fetch movie scroll', () => {
         }
       });
 
-      fetchList('planets');
-
+      const fetchedReturn = fetchList('planets');
+      console.log('return: ', fetchedReturn)
       expect(mockPlanetsReturnData.name).toEqual("planet name");
       expect(mockPlanetsReturnData.scroll).toEqual("hi");
       expect(mockPlanetsReturnData.date).toEqual("10/12/17");

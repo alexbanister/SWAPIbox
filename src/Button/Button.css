@@ -9,7 +9,11 @@
   margin: 1em;
   border: 1px solid #C43B41;
   box-shadow: 5px 5px 25px #444755;
-  color: #C8C7C5; }
+  color: #C8C7C5;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  width: 20%; }
   .button:hover {
     color: #C43B41;
     cursor: pointer;

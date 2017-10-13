@@ -16,11 +16,9 @@ const CardContainer = ({ cardData, toggleFavorite, handleLoadMore } ) => {
   return (
     <div className='cardContainer'>
       {allCards}
-      <div className='load-more'>
-        <Button label='Load More' onClick={ handleLoadMore } />
-      </div>
     </div>
   );
+  
 };
 
 CardContainer.propTypes = {

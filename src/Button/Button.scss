@@ -8,6 +8,10 @@
   border: 1px solid $highlight-dark;
   box-shadow: $shadow;
   color: $background;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  width: 20%;
   &:hover {
     color: $highlight-dark;
     cursor: pointer;

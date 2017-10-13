@@ -1,18 +1,18 @@
-// import React from 'react';
-// import { shallow, mount } from 'enzyme';
-// import fetchMock from 'fetch-mock';
-// import { Router, Route, browserHistory } from 'react-router';
-// import App from './App';
-// import {
-//   mockFilms,
-//   mockPeople,
-//   mockPlanets,
-//   mockVehicles,
-//   mockSpecies
-// } from '../_mock/mockData';
-//
-//
-// describe('User intergration test', () => {
+import React from 'react';
+import { shallow, mount } from 'enzyme';
+import fetchMock from 'fetch-mock';
+import { Router, Route, browserHistory } from 'react-router';
+import App from './App';
+import {
+  mockFilms,
+  mockPeople,
+  mockPlanets,
+  mockVehicles,
+  mockSpecies
+} from '../_mock/mockData';
+
+
+describe('User intergration test', () => {
 //   beforeEach(() => {
 //         fetchMock.get('https://swapi.co/api/films/1', {
 //       status: 200,
@@ -130,17 +130,18 @@
 //       status: 200,
 //       body: mockPlanets
 //     });
-//   });
+//   
+
 //   afterEach(() => {
 //     console.log(fetchMock.calls());
 //     expect(fetchMock.calls().unmatched).toEqual([]);
 //     fetchMock.restore();
 //   });
-//   it('should render Header and Welcome components', () => {
-//     const wrapper = shallow(<Router><App /></Router>);
-//
-//     expect(wrapper.find('Header').length).toEqual(1);
-//     expect(wrapper.find('Welcome').length).toEqual(1);
-//   });
-//
-// });
+
+  it('should render Header and Welcome components', () => {
+      const wrapper = shallow(<Router history={history}><App /></Router>);
+
+    expect(wrapper.find('Header').length).toEqual(1);
+    expect(wrapper.find('Welcome').length).toEqual(1);
+  })
+});
