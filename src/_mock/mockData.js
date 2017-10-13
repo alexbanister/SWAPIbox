@@ -20,15 +20,17 @@ const mockPeople = {
       "birth_year": "19BBY",
       "gender": "male",
       "homeworld": "https://swapi.co/api/planets/1/",
-      "species": ["https://swapi.co/api/species/1/"]
+      "species": ["https://swapi.co/api/species/1/"],
+      "type": "people"
     }
   ]
 };
 
-const cleanedPeopleData = {
-  name: "luke skywalker",
-  Homeworld: "",
-  species: ""
+const cleanedMockPeople = {
+  name: "Luke Skywalker",
+  Homeworld: "https://swapi.co/api/planets/1/",
+  species: ["https://swapi.co/api/species/1/"],
+  type: "people"
 };
 
 const mockPlanets = {
@@ -106,5 +108,5 @@ module.exports = {
   mockSpecies,
   mockCardDataObj,
   cleanedVehicleData,
-  cleanedPeopleData
+  cleanedMockPeople
 };

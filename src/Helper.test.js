@@ -4,7 +4,8 @@ import {shallow} from 'enzyme';
 import {
   fetchMovieScroll,
   fetchList,
-  cleanVehiclesData
+  cleanVehiclesData,
+  cleanPeopleData
 } from './Helper';
 import {
   mockFilms,
@@ -13,8 +14,10 @@ import {
   mockVehicles,
   mockSpecies,
   mockCardDataObj,
-  cleanedVehicleData
+  cleanedVehicleData,
+  cleanedMockPeople
 } from './_mock/mockData';
+
 
 describe('fetch movie scroll', () => {
   const mockFilms = {
@@ -114,13 +117,15 @@ describe('cleanVehiclesData', () => {
 
 describe('cleanPeopleData', () => {
 
-  it('should take an array of people and clean it', () => {
+  it('should take an arg of people and clean it', () => {
+
 
     const cleanedData = cleanPeopleData(mockPeople);
-    expect(cleanedData.name).toEqual(cleanedPeopleData.name);
-    expect(cleanedData.Model).toEqual(cleanedPeopleData.Model);
-    expect(cleanedData['Vehicle Class']).toEqual(cleanedPeopleData['Vehicle Class']);
-    expect(cleanedData.isFavorite).toEqual(cleanedPeopleData.isFavorite);
-    expect(cleanedData.type).toEqual(cleanedPeopleData.type);
+    console.log(mockPeople.results[0])
+    expect(mockPeople.results[0].name).toEqual(cleanedMockPeople.name);
+    expect(mockPeople.results[0].homeworld).toEqual(cleanedMockPeople.Homeworld);
+    // expect(cleanedData['Vehicle Class']).toEqual(cleanedPeopleData['Vehicle Class']);
+    // expect(cleanedData.isFavorite).toEqual(cleanedPeopleData.isFavorite);
+    // expect(cleanedData.type).toEqual(cleanedPeopleData.type);
   });
 });
