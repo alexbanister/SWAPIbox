@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import CardContainer from '../CardContainer/CardContainer';
 import Welcome from '../Welcome/Welcome';
-// import Helper from '../Helper';
 import { Route } from 'react-router';
 import { fetchList, fetchMovieScroll } from '../Helper.js';
 
@@ -58,7 +57,9 @@ class App extends Component {
 
   updateMovieArray() {
     fetchMovieScroll()
-      .then(movies => this.setState({movieArray: movies}, () => this.getRandomMovie()))
+      .then(movies => this.setState({
+        movieArray: movies
+      }, () => this.getRandomMovie()));
   }
 
   componentDidMount() {
@@ -80,7 +81,7 @@ class App extends Component {
 
   getRandomMovie() {
     const movieIndex = Math.floor(Math.random() * ((7 - 0) + 1)) + 0;
-    return this.state.movieArray[movieIndex]
+    return this.state.movieArray[movieIndex];
   }
 
   render() {
@@ -96,30 +97,37 @@ class App extends Component {
           }
         />
         }
-       
+
         <Route exact path="/people"
           render={() =>
             <CardContainer
-              handleLoadMore={this.handleLoadMore} cardData={this.getDataForRoute('people')} toggleFavorite={this.toggleFavorite}/>
+              handleLoadMore={this.handleLoadMore}
+              cardData={this.getDataForRoute('people')}
+              toggleFavorite={this.toggleFavorite}/>
           }
         />
-        
 
         <Route exact path="/planets"
           render={() =>
             <CardContainer
-              handleLoadMore={this.handleLoadMore} cardData={this.getDataForRoute('planets')} toggleFavorite={this.toggleFavorite}/>
+              handleLoadMore={this.handleLoadMore}
+              cardData={this.getDataForRoute('planets')}
+              toggleFavorite={this.toggleFavorite}/>
           }
         />
         <Route exact path="/vehicles"
           render={() =>
             <CardContainer
-              handleLoadMore={this.handleLoadMore} cardData={this.getDataForRoute('vehicles')} toggleFavorite={this.toggleFavorite}/>
+              handleLoadMore={this.handleLoadMore}
+              cardData={this.getDataForRoute('vehicles')}
+              toggleFavorite={this.toggleFavorite}/>
           }
         />
         <Route exact path="/favorites"
           render={() =>
-            <CardContainer cardData={this.getFavorites()} toggleFavorite={this.toggleFavorite}/>
+            <CardContainer
+              cardData={this.getFavorites()} 
+              toggleFavorite={this.toggleFavorite}/>
           }
         />
       </div>

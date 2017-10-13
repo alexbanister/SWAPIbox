@@ -15,7 +15,8 @@ const Card = ({ cardData, toggleFavorite } ) => {
     let arrayData = rowInfoData[rowName];
     if (Array.isArray(rowInfoData[rowName])) {
       arrayData = rowInfoData[rowName].map(personPlaceOrThing => {
-        return <p>{personPlaceOrThing}, </p>;
+        //check this key
+        return <p key={index}>{personPlaceOrThing}</p>;
       });
     }
     return (
@@ -29,7 +30,7 @@ const Card = ({ cardData, toggleFavorite } ) => {
       </tr>
     );
   });
-  
+
   const cardStyle = cardData.isFavorite ? 'selected-card card' : 'card';
 
   return (
@@ -43,14 +44,15 @@ const Card = ({ cardData, toggleFavorite } ) => {
         </table>
       </div>
       <h5 onClick={()=>{
-        toggleFavorite(cardData.id)
-        }}>{favText}</h5>
+        toggleFavorite(cardData.id);
+      }}>{favText}</h5>
     </div>
   );
 };
 
 Card.propTypes = {
-  cardData: PropTypes.object
+  cardData: PropTypes.object,
+  toggleFavorite: PropTypes.func
 };
 
 export default Card;

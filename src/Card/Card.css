@@ -32,7 +32,7 @@
     font-size: 1.2em;
     font-weight: 900;
     text-align: left;
-    overflow: scroll;
+    overflow: auto;
     max-height: 100px; }
   .card .section {
     font-weight: 300;

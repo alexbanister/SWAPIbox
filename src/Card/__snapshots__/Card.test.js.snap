@@ -75,7 +75,7 @@ ShallowWrapper {
         <h5
           onClick={[Function]}
 >
-          OMG! Totes Fav!!!
+          Add Fav
 </h5>,
       ],
       "className": "card",
@@ -358,11 +358,11 @@ ShallowWrapper {
         "key": null,
         "nodeType": "host",
         "props": Object {
-          "children": "OMG! Totes Fav!!!",
+          "children": "Add Fav",
           "onClick": [Function],
         },
         "ref": null,
-        "rendered": "OMG! Totes Fav!!!",
+        "rendered": "Add Fav",
         "type": "h5",
       },
     ],
@@ -419,7 +419,7 @@ ShallowWrapper {
           <h5
             onClick={[Function]}
 >
-            OMG! Totes Fav!!!
+            Add Fav
 </h5>,
         ],
         "className": "card",
@@ -702,11 +702,11 @@ ShallowWrapper {
           "key": null,
           "nodeType": "host",
           "props": Object {
-            "children": "OMG! Totes Fav!!!",
+            "children": "Add Fav",
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "OMG! Totes Fav!!!",
+          "rendered": "Add Fav",
           "type": "h5",
         },
       ],

@@ -4,6 +4,7 @@
   background: -webkit-radial-gradient(center, ellipse cover, #172633 18%, #211E27 100%);
   background: radial-gradient(ellipse at center, #172633 18%, #211E27 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 );
+  height: 20px;
   padding: 1em 3em;
   margin: 1em;
   border: 1px solid #C43B41;

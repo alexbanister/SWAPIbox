@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Card from './Card';
 import {
   mockFilms,
@@ -15,9 +15,11 @@ import {
 describe('card', () => {
   it('should render correctly and match the snapshot', () => {
     const mockFunc = jest.fn();
-    const wrapper = shallow(<Card key="1" cardData={mockCardDataObj} toggleFavorite={ mockFunc }/>);
+    const wrapper = shallow(<Card
+      key="1"
+      cardData={mockCardDataObj}
+      toggleFavorite={ mockFunc }/>);
 
     expect(wrapper).toMatchSnapshot();
-  })
-})
-
+  });
+});

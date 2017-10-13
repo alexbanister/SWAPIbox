@@ -7,10 +7,10 @@ const fetchMovieScroll = () => {
         releaseDate: movie.release_date,
         openingCrawl: movie.opening_crawl,
         EpisodeId: movie.episode_id
-      }
+      };
       return newMovieObj;
-    }))
-}
+    }));
+};
 
 
 const fetchList = (type) => {
@@ -37,6 +37,7 @@ const fetchList = (type) => {
       }
       if (type === 'planets') {
         const allResidents = personPlaceOrThing.Residents.map(residentAPI => {
+          // console.log(personPlaceOrThing.Residents);
           return fetch(residentAPI)
             .then(response => response.json());
         });
@@ -64,11 +65,11 @@ const setType = (group, type) => {
     newGroup = cleanVehiclesData(group);
   }
   return newGroup;
-}
+};
 
 const cleanVehiclesData = (arrayOfVehicles) => {
   const rawArray = arrayOfVehicles.results;
-  const cleanArray = rawArray.map((vehicle, i) => {
+  const cleanArray = rawArray.map((vehicle, index) => {
     const newVehicle = {
       name: vehicle.name,
       'Model': vehicle.model,
@@ -76,7 +77,7 @@ const cleanVehiclesData = (arrayOfVehicles) => {
       'Passengers': vehicle.passengers,
       isFavorite: false,
       type: 'vehicles',
-      id: Date.now() + i
+      id: Date.now() + index
     };
     return newVehicle;
   });
@@ -85,7 +86,7 @@ const cleanVehiclesData = (arrayOfVehicles) => {
 
 const cleanPeopleData = (arrayOfPeople) => {
   const rawArray = arrayOfPeople.results;
-  const cleanArray = rawArray.map((person, i )=> {
+  const cleanArray = rawArray.map((person, index )=> {
     const newPerson = {
       name: person.name,
       'Homeworld': person.homeworld,
@@ -93,7 +94,7 @@ const cleanPeopleData = (arrayOfPeople) => {
       'Population': 0,
       isFavorite: false,
       type: 'people',
-      id: Date.now() + i
+      id: Date.now() + index
     };
     return newPerson;
   });
@@ -102,7 +103,7 @@ const cleanPeopleData = (arrayOfPeople) => {
 
 const cleanPlanetsData = (arrayOfPlanets) => {
   const rawArray = arrayOfPlanets.results;
-  const cleanArray = rawArray.map((planet, i) => {
+  const cleanArray = rawArray.map((planet, index) => {
     const newPlanet = {
       name: planet.name,
       'Terrain': planet.terrain,
@@ -111,7 +112,7 @@ const cleanPlanetsData = (arrayOfPlanets) => {
       'Residents': planet.residents,
       isFavorite: false,
       type: 'planets',
-      id: Date.now() + i
+      id: Date.now() + index
     };
     return newPlanet;
   });
