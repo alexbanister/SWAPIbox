@@ -26,8 +26,6 @@ const Header = ({ favCount }) => {
 };
 
 Header.propTypes = {
-  compareInfo: PropTypes.objectOf(PropTypes.object),
-  removeCompare: PropTypes.func,
   favCount: PropTypes.number
 };
 
