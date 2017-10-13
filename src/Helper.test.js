@@ -1,21 +1,18 @@
-import React from 'react';
 import fetchMock from 'fetch-mock';
-import {shallow} from 'enzyme';
 import {
   fetchMovieScroll,
   fetchList,
   cleanVehiclesData,
-  cleanPeopleData
+  cleanPeopleData,
+  cleanPlanetsData
 } from './Helper';
 import {
-  mockFilms,
   mockPeople,
   mockPlanets,
   mockVehicles,
-  mockSpecies,
-  mockCardDataObj,
   cleanedVehicleData,
-  cleanedMockPeople
+  cleanedMockPeople,
+  cleanedMockPlanets
 } from './_mock/mockData';
 
 
@@ -109,7 +106,8 @@ describe('cleanVehiclesData', () => {
     const cleanedData = cleanVehiclesData(mockVehicles);
     expect(cleanedData.name).toEqual(cleanedVehicleData.name);
     expect(cleanedData.Model).toEqual(cleanedVehicleData.Model);
-    expect(cleanedData['Vehicle Class']).toEqual(cleanedVehicleData['Vehicle Class']);
+    expect(cleanedData['Vehicle Class'])
+      .toEqual(cleanedVehicleData['Vehicle Class']);
     expect(cleanedData.isFavorite).toEqual(cleanedVehicleData.isFavorite);
     expect(cleanedData.type).toEqual(cleanedVehicleData.type);
   });
@@ -119,13 +117,29 @@ describe('cleanPeopleData', () => {
 
   it('should take an arg of people and clean it', () => {
 
+    cleanPeopleData(mockPeople);
 
-    const cleanedData = cleanPeopleData(mockPeople);
-    console.log(mockPeople.results[0])
     expect(mockPeople.results[0].name).toEqual(cleanedMockPeople.name);
-    expect(mockPeople.results[0].homeworld).toEqual(cleanedMockPeople.Homeworld);
-    // expect(cleanedData['Vehicle Class']).toEqual(cleanedPeopleData['Vehicle Class']);
-    // expect(cleanedData.isFavorite).toEqual(cleanedPeopleData.isFavorite);
-    // expect(cleanedData.type).toEqual(cleanedPeopleData.type);
+    expect(mockPeople.results[0].homeworld)
+      .toEqual(cleanedMockPeople.Homeworld);
+    expect(mockPeople.results[0].type).toEqual(cleanedMockPeople.type);
+
+  });
+});
+
+describe('cleanPlantesData', () => {
+
+  it('should take an arg of planets and clean it', () => {
+
+    cleanPlanetsData(mockPlanets);
+
+    expect(mockPlanets.results[0].name).toEqual(cleanedMockPlanets[0].name);
+    expect(mockPlanets.results[0].climate)
+      .toEqual(cleanedMockPlanets[0].climate);
+    expect(mockPlanets.results[0].population)
+      .toEqual(cleanedMockPlanets[0].population);
+    expect(mockPlanets.results[0].terrain)
+      .toEqual(cleanedMockPlanets[0].terrain);
+
   });
 });

@@ -47,6 +47,18 @@ const mockPlanets = {
   ]
 };
 
+const cleanedMockPlanets = [
+  {
+    "name": 'Alderaan',
+    "terrain": 'grasslands, mountains',
+    "population": '2000000000',
+    "climate": 'temperate',
+    "residents": ['https://enzymeSucks.com/mockData/api/people/5/'],
+    "isFavorite": false,
+    "type": 'planets'
+  }
+];
+
 const mockVehicles = {
   "results": [
     {
@@ -108,5 +120,6 @@ module.exports = {
   mockSpecies,
   mockCardDataObj,
   cleanedVehicleData,
-  cleanedMockPeople
+  cleanedMockPeople,
+  cleanedMockPlanets
 };
