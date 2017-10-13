@@ -22,8 +22,6 @@ const Welcome = ({ movie }) => {
 };
 
 Welcome.propTypes = {
-  compareInfo: PropTypes.objectOf(PropTypes.object),
-  removeCompare: PropTypes.func,
   movie: PropTypes.object
 };
 

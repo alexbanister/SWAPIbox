@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Button from './Button';
 
 
@@ -10,5 +10,5 @@ describe('Button', () => {
     const wrapper = shallow(<Button onClick={mockFunc} />);
 
     expect(wrapper).toMatchSnapshot();
-  })
-})
+  });
+});
