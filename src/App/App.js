@@ -85,7 +85,6 @@ class App extends Component {
     if (this.state.movieArray[movieIndex]){
       return this.state.movieArray[movieIndex];
     }
-    console.log('recursed!')
     return this.getRandomMovie;
   }
 
@@ -115,7 +114,7 @@ class App extends Component {
               <CardContainer
                 cardData={this.getDataForRoute('people')}
                 toggleFavorite={this.toggleFavorite}/>
-              <Button label='Load More' onClick={this.handleLoadMore} />  
+              <Button label='Load More' onClick={this.handleLoadMore} />
             </div>
           }
         />
@@ -126,7 +125,7 @@ class App extends Component {
               <CardContainer
                 cardData={this.getDataForRoute('planets')}
                 toggleFavorite={this.toggleFavorite}/>
-              <Button label='Load More' onClick={this.handleLoadMore} /> 
+              <Button label='Load More' onClick={this.handleLoadMore} />
             </div>
           }
         />
@@ -136,15 +135,15 @@ class App extends Component {
               <CardContainer
                 cardData={this.getDataForRoute('vehicles')}
                 toggleFavorite={this.toggleFavorite}/>
-              <Button label='Load More' onClick={this.handleLoadMore} /> 
+              <Button label='Load More' onClick={this.handleLoadMore} />
             </div>
           }
         />
         <Route exact path="/favorites"
           render={() =>
             <CardContainer
-              cardData={this.getFavorites()} 
-              toggleFavorite={this.toggleFavorite}/>  
+              cardData={this.getFavorites()}
+              toggleFavorite={this.toggleFavorite}/>
           }
         />
       </div>

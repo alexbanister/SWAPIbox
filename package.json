@@ -35,6 +35,7 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.4.0",
     "fetch-mock": "^5.13.1",
+    "react-router-test-context": "^0.1.0",
     "react-test-renderer": "^16.0.0"
   }
 }
